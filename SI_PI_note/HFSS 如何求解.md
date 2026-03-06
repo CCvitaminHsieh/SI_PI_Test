@@ -194,25 +194,23 @@ $$ A(f)x(f)=b(f) $$
 HFSS 的流程是：
 
 1. 解出整個 3D 結構內的 **E/H 場分布**  
-    [ x(f) \rightarrow \mathbf{E}(\mathbf{r}), \mathbf{H}(\mathbf{r}) ]
+    $$ x(f) \rightarrow \mathbf{E}(\mathbf{r}), \mathbf{H}(\mathbf{r}) $$
     
 2. 在每個 port 的截面上做 **模態展開 (mode expansion)**  
-    [ \mathbf{E} = \sum_n (a_n \mathbf{e}_n + b_n \mathbf{e}_n) ]
+    $$ \mathbf{E} = \sum_n (a_n \mathbf{e}_n + b_n \mathbf{e}_n) $$
     
-    - (a_n)：入射波 amplitude
-    - (b_n)：反射波 amplitude
-    - (\mathbf{e}_n)：該 port 的本徵模態（HFSS 會先求 eigenmode）
-3. 用功率正交性計算 a_n、b_n  
-    [ a_n = \frac{1}{2P_n} \iint (\mathbf{E} \times \mathbf{H}_n^_)\cdot \hat{n}, dS ] [ b_n = \frac{1}{2P_n} \iint (\mathbf{E} \times \mathbf{H}_n^_)\cdot \hat{n}, dS ]
-    
+    - $a_n$：入射波 amplitude
+    - $b_n$：反射波 amplitude
+    - $\mathbf{e}_n$：該 port 的本徵模態（HFSS 會先求 eigenmode）
+3. 用功率正交性計算 $a_n$、$b_n$  
+    $$ a_n = \frac{1}{2P_n} \iint (\mathbf{E} \times \mathbf{H}_n)\cdot \hat{n}, dS $$ $$ b_n = \frac{1}{2P_n} \iint (\mathbf{E} \times \mathbf{H}_n)\cdot \hat{n}, dS $$
+     $$ b_n = \frac{1}{2P_n} \int (\mathbf{E} \times \mathbf{H}_n)\cdot \hat{n}, dS 
 4. 最後得到 S‑參數  
-    [ S_{mn} = \frac{b_m}{a_n} ]
-    
-
+    $$ $$ S_{mn} = \frac{b_m}{a_n} $$
 所以：
 
 - **矩陣解 x(f)** → 得到 E/H 場
-- **場投影到 port 模態** → 得到 a_n、b_n
+- **場投影到 port 模態** → 得到 $a_n$、$b_n$
 - **比值** → S‑參數
 
 這就是 FEM 解與 S‑參數的直接連結。
@@ -223,9 +221,9 @@ HFSS 的流程是：
 
 因為：
 
-[ A(f) = K - \omega^2 M ]
+$$ A(f) = K - \omega^2 M $$
 
-- (\omega = 2\pi f)
+$$ \omega = 2\pi f $$
 - 材料 ε(f)、μ(f) 也可能是頻率相關（尤其金屬、介質損耗）
 
 所以每個頻率都會有不同的矩陣 → 需要重新求解（除非用 fast sweep）。
