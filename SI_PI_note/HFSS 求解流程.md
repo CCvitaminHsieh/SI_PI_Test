@@ -99,7 +99,7 @@ $$\ldots $$
 
 wave number 只告訴你：
 
-[ k = \omega\sqrt{\mu\epsilon} ]
+$$k = \omega\sqrt{\mu\epsilon} $$
 
 但 HFSS 要解的是：
 
