@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9de6b54f7aab4e0c",
@@ -198,13 +199,13 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "b25c6526dae33f47",
+  "active": "63245e573d228e6b",
   "lastOpenFiles": [
-    "目錄大綱簡介說明.md",
+    "歡迎.md",
     "HFSS 如何求解.md",
+    "目錄大綱簡介說明.md",
     "玩轉高速電路_基於 hfss 的無源仿真實例(目錄).md",
     "注意事項.md",
-    "歡迎.md",
     "Wave Port vs Lumped Port vs Terminal Port.md",
     "電容與電場.md"
   ]
